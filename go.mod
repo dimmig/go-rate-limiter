@@ -1,4 +1,4 @@
-module go-rate-limiter
+module github.com/dimmig/go-rate-limiter
 
 go 1.24.2
 
