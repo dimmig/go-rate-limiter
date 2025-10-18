@@ -1,9 +1,5 @@
 # Go Rate Limiter
 
-<p align="center">
-  <img src="assets/logo.png" width="512" alt="logo" />
-</p>
-
 A production-ready, distributed rate limiter middleware for Go services. Built with a Redis backend for horizontal scalability and an in-memory fallback for local development.
 
 ## Features
