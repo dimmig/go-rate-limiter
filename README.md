@@ -15,7 +15,7 @@ A production-ready, distributed rate limiter middleware for Go services. Built w
 ## Installation
 
 ```bash
-go get github.com/dimmig/go-rate-limiter
+go get github.com/dimmig/go-rate-limiter@latest
 ````
 
 ## Quick Start
