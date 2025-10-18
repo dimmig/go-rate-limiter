@@ -1,39 +1,42 @@
 # Go Rate Limiter
 
-A production-ready, distributed rate limiter middleware for Go services. Built with Redis backend for horizontal scalability and in-memory fallback for local development.
+A production-ready, distributed rate limiter middleware for Go services. Built with a Redis backend for horizontal scalability and an in-memory fallback for local development.
 
 ## Features
 
-- **Distributed Rate Limiting** - Share limits across multiple service instances via Redis
-- **Thread-Safe** - Safely handles concurrent requests with atomic operations
-- **Flexible Key Extraction** - Rate limit by IP, user ID, API key, or custom logic
-- **Atomic Operations** - Lua scripts prevent race conditions in Redis
-- **Timeout Protection** - Respects context timeouts and prevents request hangs
-- **Fallback Support** - In-memory repository for testing without Redis
-- **Production-Ready** - Comprehensive tests, proper error handling, and observability
+- **Distributed Rate Limiting** – Share limits across multiple service instances via Redis.
+- **Thread-Safe** – Safely handles concurrent requests with atomic operations.
+- **Flexible Key Extraction** – Rate limit by IP, user ID, API key, or custom logic.
+- **Atomic Operations** – Lua scripts prevent race conditions in Redis.
+- **Timeout Protection** – Respects context timeouts and prevents request hangs.
+- **Fallback Support** – In-memory repository for testing without Redis.
+- **Production-Ready** – Comprehensive tests, proper error handling, and observability.
 
 ## Installation
 
 ```bash
 go get github.com/dimmig/go-rate-limiter
-```
+````
 
 ## Quick Start
 
 ### 1. Setup Redis
 
 **Using Docker (Recommended):**
+
 ```bash
 docker run --name redis-local -p 6379:6379 -d redis:latest
 ```
 
-**Or using Homebrew (macOS):**
+**Using Homebrew (macOS):**
+
 ```bash
 brew install redis
 redis-server
 ```
 
-**Or using apt (Linux):**
+**Using apt (Linux):**
+
 ```bash
 sudo apt-get install redis-server
 redis-server
@@ -72,7 +75,6 @@ func main() {
 }
 ```
 
-
 ### 3. Test It
 
 ```bash
@@ -87,7 +89,7 @@ curl http://localhost:8080/api/data
 # Returns: {"error":"rate limit exceeded"} with 429 status
 ```
 
-Other examples can be found in /examples folder
+Other examples can be found in the `/examples` folder.
 
 ---
 
@@ -107,32 +109,35 @@ type RateLimiterConfig struct {
 ### Tuning
 
 **For Public APIs:**
+
 ```go
 Limit:  10
 Window: 60  // 10 requests per minute
 ```
 
 **For Authenticated APIs:**
+
 ```go
 Limit:  1000
 Window: 60  // 1000 requests per minute
 ```
 
 **For Internal Services:**
+
 ```go
 Limit:  10000
 Window: 60  // 10000 requests per minute
 ```
 
 **For Login Endpoints:**
+
 ```go
 Limit:  5
 Window: 60  // 5 attempts per minute
 ```
+
 ---
 
 ## License
 
 MIT
-
----
