@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"fmt"
+	"github.com/dimmig/go-rate-limiter/repository"
+	"github.com/dimmig/go-rate-limiter/service"
 	"github.com/gin-gonic/gin"
-	"go-rate-limiter/repository"
-	"go-rate-limiter/service"
 )
 
 type RateLimiterConfig struct {

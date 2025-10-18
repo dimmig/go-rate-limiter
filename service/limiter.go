@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"go-rate-limiter/repository"
+	"github.com/dimmig/go-rate-limiter/repository"
 	"time"
 )
 
